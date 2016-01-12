@@ -1,0 +1,22 @@
+{
+  "name": "spudsearch",
+  "homepage": "https://github.com/phillipclarke29/spudsearch",
+  "authors": [
+    "philip <philip.clarke@redhood.co.uk>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.6",
+    "angular-bootstrap": "~1.0.3"
+  }
+}

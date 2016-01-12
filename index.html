@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Spud Search</title>
+
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+
+  </head>
+  <body ng-controller = "ListController">
+    <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+    <h1> Spud Search </h1>
+  </div>
+  </nav>
+  <div class ="container">
+    <form ng-submit="search()">
+      <div class="form-group">
+        <input type="text" class="form-control searchbox" id="search" ng-model="searchTerm" placeholder="search for spuds">
+      </div>
+  </form>
+   <div md-list-item ng-repeat="post in results" class="md-3-line">
+              <img ng-src="{{post.media.m}}" alt="" class="md-card-image"/>
+              <a href={{post.link}}> {{ post.title | limitTo : 20 }} </a>
+              <h3> {{post.author}} </h3>
+              <h4> {{post.date_taken}} </h4>
+  </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src='bower_components/angular/angular.min.js'></script>
+    <script src='bower_components/angular-bootstrap/ui-bootstrap.min.js'></script>
+    <script src='app.js'></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+  </body>
+</html>
