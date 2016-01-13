@@ -1,48 +1,41 @@
-var app = angular.module('myApp', ['ui.bootstrap']);
-
-app.controller('ModalInstanceCtrl', function ($scope, $modalInstance, post)
+var app = angular.module('app', ['ui.bootstrap']);
+app.controller('ModalInstanceCtrl', function ($scope, $modalInstance, customer)
 {
-$scope.post = post;
+$scope.customer = customer;
 
 });
 
+app.controller('CustomerController', [function($scope, $timeout, $modal, $log) {
 
-app.controller('ListController', ['$scope', '$http', function($scope, $http, $timeout, $modal, $log) {
+    $scope.customers = [
+        {
+        name: 'Ricky',
+        details: 'Some Details for Ricky',
+        },
+        {
+        name: 'Dicky',
+        details: 'Some Dicky Details',
+        },
+        {
+        name: 'Nicky',
+        details: 'Some Nicky Details',
+        }
+    ];
 
-    $scope.results = [];
+    // MODAL WINDOW
+    $scope.open = function (_customer) {
 
-      $scope.isSearching= false;
-
-    $scope.search = function(){
-
-      $scope.isSearching= true;
-
-      var term = $scope.searchTerm.split(" ")
-      var url = 'https://api.flickr.com/services/feeds/photos_public.gne?format=json&jsoncallback=JSON_CALLBACK' + '&tags="potato,"' + term
-
-      $http.jsonp(url).success(function(data){
-
-        $scope.results = data.items;
-        $scope.isSearching= false;
-      });
+        var modalInstance = $modal.open({
+          controller: "ModalInstanceCtrl",
+          templateUrl: 'myModalContent.html',
+            resolve: {
+                customer: function()
+                {
+                    return _customer;
+                }
+            }
+             });
 
     };
 
-    $scope.open = function (_post) {
-      console.log($modal)
-       var modalInstance = $modal.open({
-         controller: "ModalInstanceCtrl",
-         templateUrl: 'postModal.html',
-          //  resolve: {
-          //      post: function()
-          //      {
-          //          return post;
-          //      }
-          //  }
-            });
-
-   };
-
-
-
-  }]);
+});
