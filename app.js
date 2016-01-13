@@ -4,6 +4,11 @@ app.controller('ModalInstanceCtrl', function ($scope, $modalInstance, post)
 {
   $scope.post = post;
 
+  $scope.cancel = function () {
+    $modalInstance.dismiss('cancel');
+ };
+
+
 });
 
 
@@ -32,7 +37,8 @@ app.controller('ListController', function($scope, $http, $modal) {
       console.log(_post)
        var modalInstance = $modal.open({
          controller: "ModalInstanceCtrl",
-         templateUrl: 'myModalContent.html',
+         templateUrl: 'layouts/postModal9.html',
+         windowClass: 'app-modal-window',
            resolve: {
                post: function()
                {
@@ -42,6 +48,7 @@ app.controller('ListController', function($scope, $http, $modal) {
             });
 
    };
+
 
 
 
