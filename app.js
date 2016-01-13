@@ -1,41 +1,55 @@
-var app = angular.module('app', ['ui.bootstrap']);
-app.controller('ModalInstanceCtrl', function ($scope, $modalInstance, customer)
+var app = angular.module('myApp', ['ui.bootstrap']);
+
+app.controller('ModalInstanceCtrl', function ($scope, $modalInstance, post)
 {
-$scope.customer = customer;
+  $scope.post = post;
+
+  $scope.cancel = function () {
+    $modalInstance.dismiss('cancel');
+ };
+
 
 });
 
-app.controller('CustomerController', [function($scope, $timeout, $modal, $log) {
 
-    $scope.customers = [
-        {
-        name: 'Ricky',
-        details: 'Some Details for Ricky',
-        },
-        {
-        name: 'Dicky',
-        details: 'Some Dicky Details',
-        },
-        {
-        name: 'Nicky',
-        details: 'Some Nicky Details',
-        }
-    ];
+app.controller('ListController', function($scope, $http, $modal) {
 
-    // MODAL WINDOW
-    $scope.open = function (_customer) {
+    $scope.results = [];
 
-        var modalInstance = $modal.open({
-          controller: "ModalInstanceCtrl",
-          templateUrl: 'myModalContent.html',
-            resolve: {
-                customer: function()
-                {
-                    return _customer;
-                }
-            }
-             });
+      $scope.isSearching= false
+
+    $scope.search = function(){
+
+      $scope.isSearching= true;
+
+      var term = $scope.searchTerm.split(" ")
+      var url = 'https://api.flickr.com/services/feeds/photos_public.gne?format=json&jsoncallback=JSON_CALLBACK' + '&tags="potato,"' + term
+
+      $http.jsonp(url).success(function(data){
+
+        $scope.results = data.items;
+        $scope.isSearching= false;
+      });
 
     };
 
-});
+    $scope.open = function (_post) {
+      console.log(_post)
+       var modalInstance = $modal.open({
+         controller: "ModalInstanceCtrl",
+         templateUrl: 'layouts/postModal9.html',
+         windowClass: 'app-modal-window',
+           resolve: {
+               post: function()
+               {
+                   return _post;
+               }
+           }
+            });
+
+   };
+
+
+
+
+  });

@@ -1,3 +1,7 @@
 .searchbox {
   text-align: center;
 }
+.app-modal-window .modal-dialog {
+   height: 600px;
+   overflow: auto;
+}
