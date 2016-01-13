@@ -1,14 +1,20 @@
-var app = angular.module('myApp', [])
+var app = angular.module('myApp', ['ui.bootstrap']);
+
+app.controller('ModalInstanceCtrl', function ($scope, $modalInstance, post)
+{
+$scope.post = post;
+
+});
 
 
-app.controller('ListController', ['$scope', '$http', function($scope, $http){
+app.controller('ListController', ['$scope', '$http', function($scope, $http, $timeout, $modal, $log){
 
     $scope.results = [];
 
       $scope.isSearching= false;
 
     $scope.search = function(){
-console.log('hello')
+
       $scope.isSearching= true;
 
       var term = $scope.searchTerm.split(" ")
@@ -22,6 +28,21 @@ console.log('hello')
       });
 
     };
+
+    $scope.open = function (post) {
+      console.log(post)
+       var modalInstance = $modal.open({
+         controller: "ModalInstanceCtrl",
+         templateUrl: 'postModal.html',
+          //  resolve: {
+          //      post: function()
+          //      {
+          //          return post;
+          //      }
+          //  }
+            });
+
+   };
 
 
 

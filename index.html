@@ -28,7 +28,21 @@
               <a href={{post.link}}> {{ post.title | limitTo : 20 }} </a>
               <h3> {{post.author}} </h3>
               <h4> {{post.date_taken}} </h4>
+              <button class="btn btn-default" ng-click="open(post)">{{ post.title }}</button>
   </div>
+
+  <script type="text/ng-template" id="myModalContent.html">
+                   <div class="modal-header">
+                       <h3>The Customer Name is: {{ post.title }}</h3>
+                   </div>
+                   <div class="modal-body">
+                           This is where the Customer Details Goes<br />
+                          
+                   </div>
+                   <div class="modal-footer">
+
+                   </div>
+               </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src='bower_components/angular/angular.min.js'></script>
     <script src='bower_components/angular-bootstrap/ui-bootstrap.min.js'></script>
