@@ -7,7 +7,7 @@ $scope.post = post;
 });
 
 
-app.controller('ListController', ['$scope', '$http', function($scope, $http, $timeout, $modal, $log){
+app.controller('ListController', ['$scope', '$http', function($scope, $http, $timeout, $modal, $log) {
 
     $scope.results = [];
 
@@ -23,14 +23,13 @@ app.controller('ListController', ['$scope', '$http', function($scope, $http, $ti
       $http.jsonp(url).success(function(data){
 
         $scope.results = data.items;
-        console.log(data.items[0])
         $scope.isSearching= false;
       });
 
     };
 
-    $scope.open = function (post) {
-      console.log(post)
+    $scope.open = function (_post) {
+      console.log($modal)
        var modalInstance = $modal.open({
          controller: "ModalInstanceCtrl",
          templateUrl: 'postModal.html',
