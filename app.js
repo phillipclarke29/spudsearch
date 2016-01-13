@@ -2,16 +2,16 @@ var app = angular.module('myApp', ['ui.bootstrap']);
 
 app.controller('ModalInstanceCtrl', function ($scope, $modalInstance, post)
 {
-$scope.post = post;
+  $scope.post = post;
 
 });
 
 
-app.controller('ListController', ['$scope', '$http', function($scope, $http, $timeout, $modal, $log) {
-
+app.controller('ListController', function($scope, $http, $modal) {
+console.log($modal)
     $scope.results = [];
 
-      $scope.isSearching= false;
+      $scope.isSearching= false
 
     $scope.search = function(){
 
@@ -29,10 +29,10 @@ app.controller('ListController', ['$scope', '$http', function($scope, $http, $ti
     };
 
     $scope.open = function (_post) {
-      console.log($modal)
+      console.log(_post)
        var modalInstance = $modal.open({
          controller: "ModalInstanceCtrl",
-         templateUrl: 'postModal.html',
+         templateUrl: 'layouts/postModal.html',
           //  resolve: {
           //      post: function()
           //      {
@@ -45,4 +45,4 @@ app.controller('ListController', ['$scope', '$http', function($scope, $http, $ti
 
 
 
-  }]);
+  });
