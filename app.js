@@ -8,7 +8,7 @@ app.controller('ModalInstanceCtrl', function ($scope, $modalInstance, post)
 
 
 app.controller('ListController', function($scope, $http, $modal) {
-console.log($modal)
+
     $scope.results = [];
 
       $scope.isSearching= false
@@ -32,13 +32,13 @@ console.log($modal)
       console.log(_post)
        var modalInstance = $modal.open({
          controller: "ModalInstanceCtrl",
-         templateUrl: 'layouts/postModal.html',
-          //  resolve: {
-          //      post: function()
-          //      {
-          //          return post;
-          //      }
-          //  }
+         templateUrl: 'myModalContent.html',
+           resolve: {
+               post: function()
+               {
+                   return _post;
+               }
+           }
             });
 
    };
