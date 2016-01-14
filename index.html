@@ -12,29 +12,32 @@
 
   </head>
   <body ng-controller = "ListController">
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
-    <h1> Spud Search </h1>
-    </div>
-  </nav>
-  <div class ="container">
-    <form ng-submit="search()">
-      <div class="form-group">
-        <input type="text" class="form-control searchbox" id="search" ng-model="searchTerm"  placeholder="search for spuds">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <h1> Spud Search </h1>
       </div>
-  </form>
-   <div md-list-item ng-repeat="post in results" class="md-3-line">
-      <img ng-src="{{post.media.m}}" alt=""/>
-      <a href={{post.link}}> {{ post.title | limitTo : 20 }} </a>
-      <h3> {{post.author}} </h3>
-      <h4> {{post.date_taken}} </h4>
-      <button class="btn btn-default" ng-click="open(post)">{{ post.title }}</button>
-    </div>
-       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-       <script src='bower_components/angular/angular.min.js'></script>
-       <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.10.0/ui-bootstrap-tpls.js"></script>
-       <script src='app.js'></script>
-
-
+    </nav>
+    <div class ="container">
+      <form ng-submit="search()">
+        <div class="form-group">
+          <input type="text" class="form-control searchbox" id="search" ng-model="searchTerm"  placeholder="search for spuds">
+        </div>
+      </form>
+       <div md-list-item ng-repeat="post in results" class="md-3-line">
+         <hr>
+         <div class="row">
+          <div class="col-sm-4" >
+            <img ng-src="{{post.media.m}}" alt="" ng-click="open(post)"/>
+          </div>
+          <div class="col-sm-8">
+            <a {{post.title}} ng-click="open(post)"> {{ post.title | limitTo : 20 }}</a>
+            <h3> {{post.author}} </h3>
+            <h4> {{post.date_taken}} </h4>
+        </div>
+      </div>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+   <script src='bower_components/angular/angular.min.js'></script>
+   <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.10.0/ui-bootstrap-tpls.js"></script>
+   <script src='app.js'></script>
   </body>
 </html>

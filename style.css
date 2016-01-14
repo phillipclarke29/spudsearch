@@ -1,7 +1,23 @@
 .searchbox {
   text-align: center;
+  with: 50%;
 }
 .app-modal-window .modal-dialog {
    height: 600px;
    overflow: auto;
+}
+
+body {
+  background-image: url('http://static6.depositphotos.com/1001503/609/i/950/depositphotos_6092702-Healthy-food-background.-Potato.jpg');
+  filter: brightness(50%);
+}
+
+.container {
+  background: white;
+  padding-right: none;
+}
+
+.navbar {
+  text-align: center;
+  background-color: red;
 }
