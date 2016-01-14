@@ -13,6 +13,7 @@ app.controller('ListController', function($scope, $http, $modal) {
       $http.jsonp(url).success(function(data){
 
         $scope.results = data.items;
+        console.log(data.items)
         $scope.isSearching= false;
       });
 
@@ -22,7 +23,7 @@ app.controller('ListController', function($scope, $http, $modal) {
       console.log(_post)
        var modalInstance = $modal.open({
          controller: "ModalInstanceCtrl",
-         templateUrl: './layouts/postModal9.html',
+         templateUrl: './layouts/postModal11.html',
          windowClass: 'app-modal-window',
            resolve: {
                post: function()

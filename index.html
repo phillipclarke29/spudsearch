@@ -17,12 +17,12 @@
         <h1> Spud Search </h1>
       </div>
     </nav>
-    <div class ="container">
       <form ng-submit="search()">
         <div class="form-group">
           <input type="text" class="form-control searchbox" id="search" ng-model="searchTerm"  placeholder="find yer tattie">
         </div>
       </form>
+      <div class ="container">
        <div md-list-item ng-repeat="post in results" class="md-3-line">
          <hr>
          <div class="row">
