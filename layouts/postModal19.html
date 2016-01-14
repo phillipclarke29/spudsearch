@@ -8,13 +8,17 @@
 </div>
 
 <div class="container-fluid">
-  <div class="row-fluid">
+  <div class="row postRow">
     <div class="col-sm-3">
-      <!--Sidebar content-->
       <img src="{{post.media.m}}" alt="">
     </div>
-    <div class="col-sm-6">
+    <div class="col-sm-6 postBody">
       {{post.description}}
     </div>
   </div>
+  <div class="postTags">
+  <h4> Tags:  {{post.tags}} </h4>
+  </div>
+
+
 </div>
