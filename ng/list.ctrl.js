@@ -1,5 +1,4 @@
 app.controller('ListController', function($scope, $http, $modal) {
-
     $scope.results = [];
 
       $scope.isSearching= false
@@ -23,7 +22,7 @@ app.controller('ListController', function($scope, $http, $modal) {
       console.log(_post)
        var modalInstance = $modal.open({
          controller: "ModalInstanceCtrl",
-         templateUrl: 'layouts/postModal9.html',
+         templateUrl: './layouts/postModal9.html',
          windowClass: 'app-modal-window',
            resolve: {
                post: function()

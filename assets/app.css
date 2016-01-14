@@ -21,7 +21,7 @@ body {
 }
 .navbar {
   text-align: center;
-/*background-color: red;*/
+  background-color: #f00;
 }
 .title {
   font-size: 40px;
