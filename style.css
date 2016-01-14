@@ -25,5 +25,12 @@ body {
 
 .navbar {
   text-align: center;
-  background-color: red;
+  /*background-color: red;*/
+}
+
+.title {
+  font-size: 40px;
+}
+.col-sm-8 {
+
 }
