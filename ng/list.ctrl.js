@@ -1,17 +1,3 @@
-var app = angular.module('myApp', ['ui.bootstrap']);
-
-app.controller('ModalInstanceCtrl', function ($scope, $modalInstance, post)
-{
-  $scope.post = post;
-
-  $scope.cancel = function () {
-    $modalInstance.dismiss('cancel');
- };
-
-
-});
-
-
 app.controller('ListController', function($scope, $http, $modal) {
 
     $scope.results = [];
@@ -45,11 +31,6 @@ app.controller('ListController', function($scope, $http, $modal) {
                    return _post;
                }
            }
-            });
-
+      });
    };
-
-
-
-
-  });
+});

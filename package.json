@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/phillipclarke29/spudsearch#readme",
   "dependencies": {
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
     "http-server": "^0.8.5"
   }
 }
