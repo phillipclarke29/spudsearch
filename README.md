@@ -16,7 +16,13 @@ Stylus is used to compile css with a gulp task to watch for changes in gulp/css.
 
 Gulp is also used to watch and pipe minified js from /ng to assets/js.  Sourcemaps provide information for debugging.
 
-### Ongoing Development
+## Testing
+
+### e2e
+
+Protractor and Jasmine are installed with a simple test for the page title.  You can run by installing a selenium webdriver (use "webdriver-manager update" from the project root) and then run the tests using "protractor test/e2e/conf.js"
+
+## Ongoing Development
 
 This site is only 75% complete.  The following areas need further work.
 
