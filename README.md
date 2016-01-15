@@ -10,7 +10,7 @@ From doc root run "gulp dev" and then "http-server"
 
 ## Design
 
-Built as a single page app using Angular, Bootstrap, Bootstrap UI and a simple http-server.  The app connects to the flickr feed using a jsonp call.  Data is retrieved as posts, displayed in Angular with a modal used to display custom information.
+Built as a single page app using Angular, Bootstrap, Bootstrap UI and a simple http-server.  The app connects to the flickr feed using a jsonp call.  Data is retrieved as posts, displayed in Angular with a modal for more detailed information.
 
 Stylus is used to compile css with a gulp task to watch for changes in gulp/css.js and pipe to assets/app.css
 
@@ -20,7 +20,7 @@ Gulp is also used to watch and pipe minified js from /ng to assets/js.  Sourcema
 
 This site is only 75% complete.  The following areas need further work.
 
-* More work needed on understanding how to get the correct information from the API
+* More work needed on understanding how to get the correct information from the API with possibly a custom filter 
 * Karma testing of http backend
 * Protractor e2e tests
 * Tidying up of CSS across devices
