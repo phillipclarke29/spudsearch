@@ -20,7 +20,7 @@ Gulp is also used to watch and pipe minified js from /ng to assets/js.  Sourcema
 
 This site is only 75% complete.  The following areas need further work.
 
-* Better understanding and use of api to return information on photos containing just the body text and more accurate author information
+* More work needed on understanding how to get the correct information from the API
 * Karma testing of http backend
-* Protractor tests
+* Protractor e2e tests
 * Tidying up of CSS across devices

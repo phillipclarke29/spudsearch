@@ -13,7 +13,7 @@ app.controller('ListController', function($scope, $http, $modal) {
       $http.jsonp(url).success(function(data){
 
         $scope.results = data.items;
-        console.log(data.items)
+        console.log(data)
         $scope.isSearching= false;
       });
 
