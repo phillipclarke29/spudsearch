@@ -4,6 +4,7 @@ var stylus = require('gulp-stylus')
 gulp.task('css', function(){
   gulp.src('css/**/*.styl')
     .pipe(stylus())
+    .pipe(minifyCss({compatibility: 'ie8'}))
     .pipe(gulp.dest('assets'))
 
 })
