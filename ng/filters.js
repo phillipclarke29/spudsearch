@@ -1,5 +1,11 @@
-app.filter('description', function() {
-  return function(input) {
-    return input ? '\u2713' : '\u2718';
+app.filter('bodytext', function() {
+  return function(input, field, regex) {
+      var patt = new RegExp(regex);
+      var out = [];
+      for (var i = 0; i < input.length; i++){
+          if(patt.test(input[i][field]))
+              out.push(input[i]);
+      }
+    return out;
   };
 });
