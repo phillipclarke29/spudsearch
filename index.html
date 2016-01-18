@@ -23,9 +23,8 @@
         </div>
       </form>
       <div class ="container">
-       <div md-list-item ng-repeat="post in results" class="md-3-line">
+       <div md-list-item ng-repeat="post in results">
          <hr>
-        {{post.details}}
          <div class="row">
           <div class="col-sm-3" >
             <img ng-src="{{post.media.m}}" alt="" ng-click="open(post)"/>
@@ -33,8 +32,11 @@
           <div class="col-sm-9">
             <div class="title">
             <a {{post.title}} ng-click="open(post)"> {{ post.title | limitTo : 30 }}</a>
-          </div>
+            </div>
             <h3> {{post.author}} | {{ post.date_taken | date }} <a href="{{post.link}}">View On Flickr</a>
+              <div>
+             {{post.description | test }}
+              </div>
             </h3>
           </div>
         </div>

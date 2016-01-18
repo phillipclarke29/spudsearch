@@ -1,4 +1,4 @@
-app.controller('ListController', function($scope, $http, $modal) {
+app.controller('ListController', function($scope, $http, $modal, $filter) {
     $scope.results = [];
 
       $scope.isSearching= false
@@ -32,5 +32,7 @@ app.controller('ListController', function($scope, $http, $modal) {
                }
            }
       });
+
+
    };
 });

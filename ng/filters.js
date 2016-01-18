@@ -1,11 +1,7 @@
-app.filter('bodytext', function() {
-  return function(input, field, regex) {
-      var patt = new RegExp(regex);
-      var out = [];
-      for (var i = 0; i < input.length; i++){
-          if(patt.test(input[i][field]))
-              out.push(input[i]);
-      }
+app.filter('test', function() {
+  return function(input) {
+    var out = input.match(/<a[^>]*>([\s\S]*?)<\/a>/);
+
     return out;
   };
-});
+})
