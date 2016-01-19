@@ -34,9 +34,9 @@
             <a {{post.title}} ng-click="open(post)"> {{ post.title | limitTo : 30 }}</a>
             </div>
             <h3> {{post.author}} | {{ post.date_taken | date }} <a href="{{post.link}}">View On Flickr</a>
+              <br>
               <div>
-
-             {{post.description | test}}
+               <a href="http{{post.description | test}}">Author</a>
               </div>
             </h3>
           </div>
