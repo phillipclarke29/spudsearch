@@ -23,7 +23,7 @@ app.controller('ListController', function($scope, $http, $modal, $filter) {
       console.log(_post)
        var modalInstance = $modal.open({
          controller: "ModalInstanceCtrl",
-         templateUrl: './layouts/postModal29.html',
+         templateUrl: './layouts/postModal30.html',
          windowClass: 'app-modal-window',
            resolve: {
                post: function()
