@@ -4,7 +4,7 @@
 <a href="{{post.link}}">{{post.title}} </a>
 </h2>
 <h4>
-<a href="https://www.flickr.com/people/zimmcomm">{{post.author}}</a> | Published : {{ post.date_taken | date }}
+<a href="http{{post.description | authorLink}}">{{post.description | authorName}}</a>  | Published : {{ post.date_taken | date }}
 </div>
 
 <div class="container-fluid">
@@ -13,7 +13,7 @@
       <img src="{{post.media.m}}" alt="">
     </div>
     <div class="col-sm-6 postBody">
-      {{post.description}}
+      {{post.description | description}}
     </div>
   </div>
   <div class="postTags">
