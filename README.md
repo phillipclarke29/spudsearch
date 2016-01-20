@@ -19,7 +19,7 @@ Gulp is also used to watch and pipe minified js from /ng to assets/js.  Sourcema
 ### Ongoing Development
 
 This site is only 80% complete.  The following areas need further work.
-
+* Tags to links - linky?
 * Karma testing of http backend
 * Protractor e2e tests
 * Tidying up of CSS across devices
